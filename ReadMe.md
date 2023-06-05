@@ -4,8 +4,11 @@ Simple application that allow user to get list of not forked GitHub
 user repositories, branches and last commits using user login. 
 
 ## Usage
-
-Endpoint requires param "login" with value being login of account that we want to check.
+Application have single endpoint (controller address was left empty):
+```
+"/get_user_github_repositories"
+```
+that requires param "login" with value being login of account that we want to check.
 
 ## Some explanation about the decision-making
 
@@ -30,7 +33,7 @@ when media type is neither xml, nor json. Also, the part of code:
    HttpHeaders headers = new HttpHeaders();
    headers.setContentType(MediaType.APPLICATION_JSON);
 ````
-secures application ability to use ExceptionHandler in situations mentioned above. Also, I know that app still have
+secures application ability to use ExceptionHandler in situations mentioned above. I know that app still have
 holes in therms of possible errors but ive tired to not make the project too bloated.
 
 I couldn't figure out how to filter out forked repositories using api parameters
